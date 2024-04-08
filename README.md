@@ -1,18 +1,12 @@
-# Webpack Boilerplate
+# cTracker
 
 ---
 
-Boilerplate that facilitates the creation of a local development environment, incorporating various associated technologies to enhance code quality. Designed specifically for educational projects.
+Fork of Tracalorie project form Brad Traversy with new features. Made with educational porpouses.
 
 ## Features
 
-- [DevServer](https://webpack.js.org/configuration/dev-server/).
-- [Babel](https://webpack.js.org/loaders/babel-loader/).
-- [CSS](https://webpack.js.org/loaders/css-loader/) & [Style loaders](https://webpack.js.org/loaders/style-loader/).
-- [Sass](https://sass-lang.com/dart-sass/) & [Sass loader](https://webpack.js.org/loaders/sass-loader/)
-- [Mini Css Extract Plugin](https://webpack.js.org/plugins/mini-css-extract-plugin/).
-- [Html Webpack Plugin](https://webpack.js.org/plugins/html-webpack-plugin/).
-- [Typescript](https://webpack.js.org/guides/typescript/).
+- [Webpack Boilerplate](https://github.com/JeroPizarro/webpack-boilerplate). This boilerplate includes TS, Sass, and other utilities.
 
 ## Commands
 
@@ -26,4 +20,4 @@ Production build in dist/.
 
 ## Future Improvements
 
-- Tesing suite
+- UI refactor.

@@ -1,16 +1,17 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "c-tracker",
   "version": "1.0.0",
-  "description": "Webpack Boilerplate",
-  "main": "app.js",
+  "description": "Application to track daily calories consumed and workouts",
+  "main": "app.ts",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve"
   },
   "keywords": [
-    "webpack",
-    "boilerplate",
-    "local enviroment"
+    "calorie tracker",
+    "workout tracker",
+    "educational",
+    "typescript app"
   ],
   "author": "Jero Pizarro",
   "license": "MIT",
