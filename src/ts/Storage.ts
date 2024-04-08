@@ -1,4 +1,4 @@
-import { Item } from './interfaces';
+import { ItemInt } from './interfaces';
 
 class Storage {
   static getCalorieLimit(defaultLimit: number = 2000): number {
@@ -34,8 +34,8 @@ class Storage {
     localStorage.setItem('totalCalories', JSON.stringify(totalCalories));
   }
 
-  static getMeals(): Item[] {
-    let meals: Item[];
+  static getMeals(): ItemInt[] {
+    let meals: ItemInt[];
 
     if (localStorage.getItem('meals') === null) {
       meals = [];
@@ -46,14 +46,14 @@ class Storage {
     return meals;
   }
 
-  static saveMeal(meal: Item): void {
-    const meals: Item[] = Storage.getMeals();
+  static saveMeal(meal: ItemInt): void {
+    const meals: ItemInt[] = Storage.getMeals();
     meals.push(meal);
     localStorage.setItem('meals', JSON.stringify(meals));
   }
 
   static removeMeal(id: string): void {
-    const meals: Item[] = Storage.getMeals();
+    const meals: ItemInt[] = Storage.getMeals();
 
     meals.forEach((meal, index) => {
       if (meal.id === id) {
@@ -64,8 +64,8 @@ class Storage {
     localStorage.setItem('meals', JSON.stringify(meals));
   }
 
-  static getWorkouts(): Item[] {
-    let workouts: Item[];
+  static getWorkouts(): ItemInt[] {
+    let workouts: ItemInt[];
 
     if (localStorage.getItem('workouts') === null) {
       workouts = [];
@@ -76,14 +76,14 @@ class Storage {
     return workouts;
   }
 
-  static saveWorkout(workout: Item): void {
-    const workouts: Item[] = Storage.getWorkouts();
+  static saveWorkout(workout: ItemInt): void {
+    const workouts: ItemInt[] = Storage.getWorkouts();
     workouts.push(workout);
     localStorage.setItem('workouts', JSON.stringify(workouts));
   }
 
   static removeWorkout(id: string): void {
-    const workouts: Item[] = Storage.getWorkouts();
+    const workouts: ItemInt[] = Storage.getWorkouts();
 
     workouts.forEach((workout, index) => {
       if (workout.id === id) {

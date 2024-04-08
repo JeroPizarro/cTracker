@@ -1,14 +1,14 @@
-interface Item {
+interface ItemInt {
   id: string;
   name: string;
   calories: number;
 }
 
-interface Tracker {
+interface TrackerInt {
   calorieLimit: number;
   totalCalories: number;
-  meals: Item[];
-  workouts: Item[];
+  meals: ItemInt[];
+  workouts: ItemInt[];
 }
 
-export { Item, Tracker };
+export { ItemInt, TrackerInt };

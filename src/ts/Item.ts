@@ -1,6 +1,6 @@
-import { Item } from './interfaces';
+import { ItemInt } from './interfaces';
 
-class Meal implements Item {
+class Meal implements ItemInt {
   id: string;
   name: string;
   calories: number;
@@ -12,7 +12,7 @@ class Meal implements Item {
   }
 }
 
-class Workout implements Item {
+class Workout implements ItemInt {
   id: string;
   name: string;
   calories: number;
