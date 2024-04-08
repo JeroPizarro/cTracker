@@ -1,14 +1,9 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-body {
-  background-color: red;
-  text-align: center;
-
-  h1 {
-    margin-top: 50%;
-  }
+.hidden {
+  display: none;
 }

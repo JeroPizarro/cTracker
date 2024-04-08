@@ -1,6 +1,6 @@
+import '@fortawesome/fontawesome-free/js/all';
+import { Modal, Collapse } from 'bootstrap';
+
 //Styles
 import './styles/main.scss';
-
-//App.ts
-import test from './ts/app';
-console.warn(test('TS init'));
+import './styles/bootstrap.scss';
