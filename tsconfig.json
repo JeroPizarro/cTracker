@@ -6,6 +6,7 @@
     "noImplicitAny": true,
     "outDir": "./dist/",
     "removeComments": true,
-    "target": "es5"
+    "sourceMap": true,
+    "target": "ES2020"
   }
 }
