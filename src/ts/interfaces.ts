@@ -9,6 +9,8 @@ interface TrackerInt {
   totalCalories: number;
   meals: ItemInt[];
   workouts: ItemInt[];
+  addMeal(meal: ItemInt): void;
+  addWorkout(workout: ItemInt): void;
 }
 
 export { ItemInt, TrackerInt };
