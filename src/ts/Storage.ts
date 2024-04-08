@@ -10,7 +10,6 @@ class Storage {
       calorieLimit = +localStorage.getItem('calorieLimit');
     }
 
-    console.log('test');
     return calorieLimit;
   }
 
