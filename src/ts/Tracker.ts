@@ -1,6 +1,5 @@
 import { TrackerInt, ItemInt } from './interfaces';
 import Storage from './Storage';
-import { Meal, Workout } from './Item.js';
 
 class Tracker implements TrackerInt {
   calorieLimit: number;
@@ -24,11 +23,11 @@ class Tracker implements TrackerInt {
 
   //Public Methods
 
-  // loadItems() {
-  //   this.#meals.forEach((meal) => this.#displayNewMeal(meal));
+  loadItems(): void {
+    this.meals.forEach((meal) => this.#displayNewMeal(meal));
 
-  //   this.#workouts.forEach((workout) => this.#displayNewWorkout(workout));
-  // }
+    this.workouts.forEach((workout) => this.#displayNewWorkout(workout));
+  }
 
   addMeal(meal: ItemInt): void {
     this.meals.push(meal);
@@ -48,51 +47,51 @@ class Tracker implements TrackerInt {
     this.#displayNewWorkout(workout);
   }
 
-  // removeMeal(mealId) {
-  //   const index = this.#meals.findIndex((meal) => meal.id === mealId);
+  removeMeal(mealId: string): void {
+    const index: number = this.meals.findIndex((meal) => meal.id === mealId);
 
-  //   if (index !== -1) {
-  //     const mealToRemove = this.#meals[index];
-  //     this.#totalCalories -= mealToRemove.calories;
-  //     Storage.setTotalCalories(this.#totalCalories);
-  //     Storage.removeMeal(mealId);
-  //     this.#meals.splice(index, 1);
-  //     this.#render();
-  //   }
-  // }
+    if (index !== -1) {
+      const mealToRemove = this.meals[index];
+      this.totalCalories -= mealToRemove.calories;
+      Storage.setTotalCalories(this.totalCalories);
+      Storage.removeMeal(mealId);
+      this.meals.splice(index, 1);
+      this.#render();
+    }
+  }
 
-  // removeWorkout(workoutId) {
-  //   const index = this.#workouts.findIndex(
-  //     (workout) => workout.id === workoutId
-  //   );
+  removeWorkout(workoutId: string): void {
+    const index: number = this.workouts.findIndex(
+      (workout) => workout.id === workoutId
+    );
 
-  //   if (index !== -1) {
-  //     const workoutToRemove = this.#workouts[index];
-  //     this.#totalCalories += workoutToRemove.calories;
-  //     Storage.setTotalCalories(this.#totalCalories);
-  //     Storage.removeWorkout(workoutId);
-  //     this.#workouts.splice(index, 1);
-  //     this.#render();
-  //   }
-  // }
+    if (index !== -1) {
+      const workoutToRemove = this.workouts[index];
+      this.totalCalories += workoutToRemove.calories;
+      Storage.setTotalCalories(this.totalCalories);
+      Storage.removeWorkout(workoutId);
+      this.workouts.splice(index, 1);
+      this.#render();
+    }
+  }
 
-  // reset() {
-  //   this.totalCalories = 0;
-  //   this.#meals = [];
-  //   this.#workouts = [];
-  //   Storage.clearAll();
-  //   this.#render();
-  // }
+  reset(): void {
+    this.totalCalories = 0;
+    this.meals = [];
+    this.workouts = [];
+    Storage.clearAll();
+    this.#render();
+  }
 
-  // setCalorieLimit(newCalorieLimit) {
-  //   this.calorieLimit = newCalorieLimit;
-  //   Storage.setCalorieLimit(newCalorieLimit);
-  //   this.#displayCaloriesLimit();
-  //   this.#render();
-  // }
+  setCalorieLimit(newCalorieLimit: number): void {
+    this.calorieLimit = newCalorieLimit;
+    Storage.setCalorieLimit(newCalorieLimit);
+    this.#displayCaloriesLimit();
+    this.#render();
+  }
 
   //Private Methods
-  #render() {
+  #render(): void {
     this.#displayCaloriesTotal();
     this.#displayCaloriesConsumed();
     this.#displayCaloriesBurned();
@@ -136,7 +135,6 @@ class Tracker implements TrackerInt {
     caloriesBuernedEl.innerHTML = calories.toString();
   }
 
-  //TODO fix remaining calories calculation
   #displayCaloriesRemainig(): void {
     const caloriesRemainigEl: HTMLElement = document.querySelector(
       '#calories-remaining'

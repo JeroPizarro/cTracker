@@ -11,6 +11,11 @@ interface TrackerInt {
   workouts: ItemInt[];
   addMeal(meal: ItemInt): void;
   addWorkout(workout: ItemInt): void;
+  removeMeal(id: string): void;
+  removeWorkout(id: string): void;
+  loadItems(): void;
+  reset(): void;
+  setCalorieLimit(newCalorieLimit: number): void;
 }
 
 export { ItemInt, TrackerInt };
